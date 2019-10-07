@@ -1,0 +1,371 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "OpenSans-Light";
+}
+
+html, body {
+	height: 100%;
+}
+
+@font-face{
+	src:url('../Fonts/OpenSans-Light.ttf');
+	font-family: "OpenSans-Light";
+}
+
+div.clear{
+	clear: both;
+}
+
+div.center{
+	/* width: 1280px;*/
+	max-width: 1280px;
+	width: 100%;
+	margin:0 auto;
+	/* padding: 0 2%;*/
+}
+
+div.header {
+	/* min-width: 1280px; */
+	width: 100%;
+	padding: 0 2%;
+	height: 60px;
+	background-color: #212343;
+}
+
+.header img{
+	margin: 15px;
+}
+
+div.container-banner{
+	padding: 0 2%;
+	/* min-width: 1200px; */
+	width: 100%;
+	height: 700px;
+	background-image: url('../Imagens/header_bg.png');
+	/* design responsivo e vai acabar cobrindo toda a área */
+	background-size: cover;
+	background-position: center;
+}
+
+/* 
+	há duas formas de colocar o box do formulario alinhado para a direita
+
+	primeira é definindo o float: right; -> dentro do div.form
+	segundo é definindo um display: inline-block; no div.form
+	e em seguida dentro do div.center definir um text-align: right;
+*/
+
+div.container-banner > div.center{
+	height: 100%;
+	/*max-width: 1280px;
+	text-align: right; */
+}
+
+
+div.form {
+	padding: 20px;
+	width: 400px;
+	/*height: calc(100% + 700px); usando a função calc para calcular a altura á mais nos form.*/;
+	height: 728px;
+	float: right;
+	/* display: inline-block; */
+	position: relative; /* para poder utilizar as propriedades do margin. */
+	top: -15px; /* para subir os 15px(negativo) e da mesma forma irá sobrar 15px acima e abaixo. */
+	/*border: 8px solid #ccc;*/
+	border: 12px solid rgba(85,85,85,0.6);
+	background-color: white;
+	/*
+		o conteudo so vai começar depois da borda, seguindo os valores especificados na propriedade border
+		deixando assim a cor mais opaca e cinza, como especificado, isso tudo devindo ao background-clip, que
+		foi definido como padding-box;
+
+		o background-origin tem o mesmo conceito, porem, serve somente para imagens.
+	*/
+	background-clip: padding-box;
+}
+
+div.form h2{
+	font-weight: normal;
+	color: #999999;
+	font-size: 21px;
+
+}
+
+div.input-container{
+	margin-top: 20px;
+}
+
+div.input-container span{
+	display: inline-block;
+	width: 100%;
+	font-size: 17px;
+	color: #BBBBBB;
+	font-weight: bold;
+}
+
+div.input-container input[type=text]{
+	margin-top: 8px;
+	width: 344px;
+	height: 55px;
+	padding: 8px 10px;
+	border: 2px solid #ccc;
+}
+
+div.input-container input[type=text]:focus{
+	outline: 0;
+}
+
+div.form p{
+	display: inline-block;
+	width: 100%;
+	font-size: 17px;
+	color: #BBBBBB;
+	font-weight: bold;
+	margin: 20px 0;
+}
+
+div.form div.input-submit-container{
+	text-align: center;
+}
+
+div.input-submit-container input[type=submit]{
+	color: white;
+	font-size: 25px;
+	width: 280px;
+	height: 56px;
+	background-color: #363A6D;
+	border-bottom: 5px solid #4A5097;
+	cursor: pointer;
+	margin-top: 30px;
+}
+
+div.form input[type=submit]:hover{
+	background-color: #323665;
+}
+
+div.box-list{
+	float: left;
+	width: 519px;
+	height: 270px;
+	background-color: rgba(33,35,67,0.7);
+	margin-top: 100px;
+	padding: 30px;
+}
+
+div.box-list ul{
+	list-style-position: inside;
+}
+
+div.box-list ul li{
+	color: white;
+	margin-top: 22px;
+}
+
+
+div.container-banner2{
+	/* min-width: 1280px; */
+	padding: 40px 2%;
+	background-color: #808080;
+	text-align: center;
+}
+
+div.container-banner2 h2{
+	font-weight: normal;
+}
+
+div.container-banner2 p{
+	/* width: 698px; */
+	width: 100%;
+	max-width: 768px;
+	text-align: justify;
+	display: inline-block;
+	margin: 15px 0;
+}
+
+div.arrow{
+	width: 40px;
+	height: 40px;
+	background-size: 100% 100%;
+	position: relative;
+	top: 60px;
+	left: 50%;
+	margin-left: -20px;
+	background-image: url('../Imagens/arrow.png');
+}
+
+div.container-section1 {
+	/* min-width: 1280px; */
+	padding: 90px 2%;
+}
+
+div.container-section1 h2 {
+	text-align: center;
+	color: #462663;
+	font-weight: normal;
+}
+
+
+div.container-subsection1 {
+	margin-top: 40px;
+	text-align: center;
+}
+
+div.container-single1{
+	float: left;
+	width: 33.333%;
+	padding: 30px;
+}
+
+div.container-single1-text h2{
+	margin-top: 20px;
+}
+
+div.container-single1-text p{
+	margin-top: 15px;
+	padding: 10px;
+	text-align: justify;
+}
+div.container-single1 img{
+	width: 70px;
+}
+
+/*
+	maneiras para corrigir o rodape...
+
+	usando clear: both; -> dentro da classe footer
+
+	ou
+
+	criar uma classe chamada clear e colocar essa propriedade 
+	clear:both; dentro e colocar o rodape dentro de uma div
+	com uma classe nomeada como clear.
+
+*/
+
+
+div.footer{
+	border-top: 4px solid #888888;
+	padding: 30px 0;
+	text-align: center;
+}
+
+div.footer p{
+	color: #888888;
+	font-size: 20px;
+	margin-top: 4px;
+}
+
+div.borda{
+	border: 2px dotted black;
+	text-align: center;
+	display: inline-block;
+	padding: 15px;
+}
+
+/*
+	a maioria dos elementos e funções comentadas nesta segunda parte
+	do projeto01, foi especificamente para resolver a parte responsiva
+*/
+
+@media screen and (max-width: 1024px){
+
+	div.header{
+		height: auto;
+		width: 100%;
+		padding: 15px 0;
+		text-align: center;
+	}
+
+	div.header img{
+		margin:0;
+	}
+
+	div.container-banner{
+		width: 100%;
+		padding: 40px 2%;
+		height: auto;
+		text-align: center;
+	}
+
+	div.form{
+		max-width: 400px;
+		padding: 10px;
+		width: 60%;
+		height: 100%;
+		/* display: inline-block; */
+		float: right;
+		top: 0;
+		/* margin-top: 30px; */
+	}
+
+	div.box-list{
+		/* margin-top: 30px; */
+		float: left;
+		width: 40%;
+		max-width: 500px;
+		height: auto;
+		/* background-color: rgba(33,35,67,0.7);
+		margin-top: 100px; */
+		padding: 30px 0;
+		display: inline-block;
+	}
+
+	div.input-container input[type=text]{
+		/* margin-top: 8px; */
+		width: 100%;
+		height: 55px;
+		/* border: 2px solid #ccc; */
+	}
+
+	div.input-submit-container input[type=submit]{
+		/*color: white;
+		font-size: 25px;
+		width: 280px;*/
+		max-width: 280px;
+		height: 56px;
+		width: 100%;
+		/* background-color: #363A6D;
+		border-bottom: 5px solid #4A5097;
+		cursor: pointer;
+		margin-top: 30px; */
+	}
+
+}
+
+@media screen and (max-width: 768px) {
+
+	div.box-list{
+		margin-top: 0;
+		float: none;
+		display: inline-block;
+		width: 100%;
+	}
+
+	div.form{
+		float: none;
+		display: inline-block;
+		width: 90%;
+		margin-top: 30px;
+	}
+
+	div.container-single1{
+		float: none;
+		display: inline-block;
+		width: 100%;
+		max-width: 600px;
+		padding: 30px 0;
+	}
+
+	div.container-banner2{
+		padding-right: 4%;
+		padding-left: 4%;
+	}
+
+	div.footer{
+		padding-right: 1.2%;
+		padding-left: 1.2%;
+	}
+
+}
